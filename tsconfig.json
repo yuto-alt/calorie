@@ -2,9 +2,12 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@env": ["@types/env.d.ts"]
+      "@env": [
+        "@types/env.d.ts"
+      ]
     },
     "jsx": "react-native",
     "esModuleInterop": true
-  }
+  },
+  "extends": "expo/tsconfig.base"
 }

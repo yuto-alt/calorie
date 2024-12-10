@@ -6,12 +6,11 @@ import {
   TextInput,
   Button,
   Alert,
-  ScrollView
+  ScrollView,
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import ShowMap from "./map/ShowMap";
-import  Direction  from "./map/Direction";
-
+import Direction from "./map/Direction";
 
 const METS_DATA = {
   transportation: {
@@ -30,8 +29,8 @@ const METS_DATA = {
       { mets: 11.0, example: "ランニング（かなり速）" },
       { mets: 8.0, example: "サイクリング" },
       { mets: 8.8, example: "階段を登る" },
-    ]
-  }
+    ],
+  },
 };
 
 export default function App() {
@@ -64,8 +63,8 @@ export default function App() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-          <Direction />
-          <ShowMap  />
+      <Direction />
+      <ShowMap />
       <Text style={styles.header}>消費カロリー計算アプリ</Text>
       <Button title="消費カロリーを計算" onPress={calculateCalories} />
       {calories !== null && (
@@ -73,7 +72,7 @@ export default function App() {
           予想消費カロリー: {calories.toFixed(2)} kcal
         </Text>
       )}
-      
+
       <TextInput
         style={styles.input}
         placeholder="移動距離 (km)"
@@ -93,7 +92,7 @@ export default function App() {
         onChangeText={(value) => {
           setSpeed(value);
           setCalories(null);
-        }}        
+        }}
         // onChangeText={setSpeed}
       />
       <TextInput
@@ -104,10 +103,10 @@ export default function App() {
         onChangeText={(value) => {
           setWeight(value);
           setCalories(null);
-        }}        
+        }}
         // onChangeText={setWeight}
       />
-      
+
       <Picker
         selectedValue={mets}
         onValueChange={(itemValue) => setMets(itemValue)}
@@ -140,7 +139,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     marginBottom: 20,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   input: {
     width: "80%",
@@ -149,13 +148,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 10,
     paddingHorizontal: 10,
-    borderRadius: 5
+    borderRadius: 5,
   },
   result: {
     marginTop: 20,
     fontSize: 18,
-    fontWeight: "bold"
-  }
+    fontWeight: "bold",
+  },
 });
 // 12/8 18:45
 //テスト//
