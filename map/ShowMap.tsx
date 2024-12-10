@@ -5,7 +5,7 @@ import styles  from './styles';
 
 const ShowMap = () => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container}>›
       <MapView
         style={styles.map}
         initialRegion={{
