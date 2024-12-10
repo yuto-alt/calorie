@@ -23,6 +23,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCDz4tsLuoh8J2tV13tNVnRT5W9i8iwgJs"
+        }
+      }
   }
 }

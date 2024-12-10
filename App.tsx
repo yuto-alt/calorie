@@ -9,6 +9,9 @@ import {
   ScrollView
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
+import ShowMap from "./map/ShowMap";
+import  Direction  from "./map/Direction";
+
 
 const METS_DATA = {
   transportation: {
@@ -61,6 +64,8 @@ export default function App() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
+          <Direction />
+          <ShowMap  />
       <Text style={styles.header}>消費カロリー計算アプリ</Text>
       <Button title="消費カロリーを計算" onPress={calculateCalories} />
       {calories !== null && (
@@ -127,10 +132,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    padding: 20
+    padding: 20,
+    backgroundColor: "#fff",
   },
   header: {
     fontSize: 20,
@@ -153,3 +158,4 @@ const styles = StyleSheet.create({
   }
 });
 // 12/8 18:45
+//テスト//
