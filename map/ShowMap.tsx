@@ -1,37 +1,62 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, Button} from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
-import styles  from './styles';
+import { StyleSheet, View } from "react-native";
+import MapView, { Marker } from "react-native-maps";
+import React, { FC } from "react";
 
-const ShowMap = () => {
+type ShowMapProps = {
+  originCoords: { latitude: number; longitude: number };
+  destinationCoords: { latitude: number; longitude: number };
+  style;
+};
+
+const ShowMap: FC<ShowMapProps> = ({
+  originCoords,
+  destinationCoords,
+  style,
+}) => {
+  console.log("maps", originCoords, destinationCoords);
+  const styles = StyleSheet.create({
+    map: {
+      flex: 1,
+    },
+    info: {
+      padding: 10,
+    },
+    calorieText: {
+      paddingRight: 10,
+    },
+    text: {},
+  });
+
   return (
-    <View style={styles.container}>›
+    <View style={style}>
       <MapView
         style={styles.map}
         initialRegion={{
-          latitude: 35.6895, // 東京の緯度
-          longitude: 139.6917, // 東京の経度
+          latitude: originCoords.latitude,
+          longitude: originCoords.longitude,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
       >
         <Marker
-          coordinate={{ latitude: 35.6895, longitude: 139.6917 }}
-          title="東京"
-          description="日本の首都"
+          coordinate={{
+            latitude: originCoords.latitude,
+            longitude: originCoords.longitude,
+          }}
+          title="出発地点"
         />
+        {destinationCoords.latitude && destinationCoords.longitude && (
+          <Marker
+            coordinate={{
+              latitude: destinationCoords.latitude,
+              longitude: destinationCoords.longitude,
+            }}
+            title="目的地"
+          />
+        )}
       </MapView>
     </View>
   );
 };
 
 export default ShowMap;
-
-
-
-
-
-
-
-// 12/9 19:40
-//クリスマス
