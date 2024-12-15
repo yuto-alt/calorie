@@ -13,7 +13,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kei1213.app"
     },
     "android": {
       "adaptiveIcon": {
@@ -25,9 +26,21 @@
       "favicon": "./assets/favicon.png"
     },
     "config": {
-        "googleMaps": {
-          "apiKey": "AIzaSyCDz4tsLuoh8J2tV13tNVnRT5W9i8iwgJs"
-        }
+      "googleMaps": {
+        "apiKey": "AIzaSyCDz4tsLuoh8J2tV13tNVnRT5W9i8iwgJs"
       }
+    },
+    "jsEngine": "hermes",
+    "extra": {
+      "eas": {
+        "projectId": "dba91c7c-ac46-41dc-a8f4-e42089f75c96"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/dba91c7c-ac46-41dc-a8f4-e42089f75c96"
+    }
   }
 }
